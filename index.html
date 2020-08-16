@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
+        <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-pie.min.js"></script>
+        <title>Global Emissions</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="d-flex w-50 order-0">
+                <a class="navbar-brand mr-1" href="/">Global Emissions</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse justify-content-stretch" id="navbar7">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/worldmap/index.html">Map</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+            <div class="container-fluid bg-light pt-2 pb-2">
+            <!--
+            <b>Region</b>
+            <select class="selectpicker" multiple data-live-search="true">
+                <option data-tokens="world">The Whole World</option>
+                <optgroup label="Continents">
+                    <option data-tokens="northamerica">North America</option>
+                    <option data-tokens="southamerica">South America</option>
+                    <option data-tokens="europe">Europe</option>
+                    <option data-tokens="asia">Asia</option>
+                    <option data-tokens="australia">Australia</option>
+                    <option data-tokens="africa">Africa</option>
+                </optgroup>
+                <optgroup label="Countries">
+                    <option>Afghanistan</option>
+                    <option>Albania</option>
+                    <option>Algeria</option>
+                    <option>Andorra</option>
+                    <option>Angola</option>
+                    <option>Antigua and Barbuda</option>
+                    <option>Argentina</option>
+                    <option>Armenia</option>
+                    <option>Australia</option>
+                    <option>Austria</option>
+                    <option>Azerbaijan</option>
+                    <option>Bahamas</option>
+                    <option>Bahrain</option>
+                    <option>Bangladesh</option>
+                    <option>Barbados</option>
+                    <option>Belarus</option>
+                    <option>Belgium</option>
+                    <option>Belize</option>
+                    <option>Benin</option>
+                    <option>Bhutan</option>
+                    <option>Bolivia</option>
+                    <option>Bosnia and Herzegovina</option>
+                    <option>Botswana</option>
+                    <option>Brazil</option>
+                    <option>Brunei</option>
+                    <option>Bulgaria</option>
+                    <option>Burkina Faso</option>
+                    <option>Burundi</option>
+                    <option>Côte d'Ivoire</option>
+                    <option>Cabo Verde</option>
+                    <option>Cambodia</option>
+                    <option>Cameroon</option>
+                    <option>Canada</option>
+                    <option>Central African Republic</option>
+                    <option>Chad</option>
+                    <option>Chile</option>
+                    <option>China</option>
+                    <option>Colombia</option>
+                    <option>Comoros</option>
+                    <option>Congo</option>
+                    <option>Costa Rica</option>
+                    <option>Croatia</option>
+                    <option>Cuba</option>
+                    <option>Cyprus</option>
+                    <option>Czechia</option>
+                    <option>Democratic Republic of the Congo</option>
+                    <option>Denmark</option>
+                    <option>Djibouti</option>
+                    <option>Dominica</option>
+                    <option>Dominican Republic</option>
+                    <option>Ecuador</option>
+                    <option>Egypt</option>
+                    <option>El Salvador</option>
+                    <option>Equatorial Guinea</option>
+                    <option>Eritrea</option>
+                    <option>Estonia</option>
+                    <option>Eswatini</option>
+                    <option>Ethiopia</option>
+                    <option>Fiji</option>
+                    <option>Finland</option>
+                    <option>France</option>
+                    <option>Gabon</option>
+                    <option>Gambia</option>
+                    <option>Georgia</option>
+                    <option>Germany</option>
+                    <option>Ghana</option>
+                    <option>Greece</option>
+                    <option>Grenada</option>
+                    <option>Guatemala</option>
+                    <option>Guinea</option>
+                    <option>Guinea-Bissau</option>
+                    <option>Guyana</option>
+                    <option>Haiti</option>
+                    <option>Holy See</option>
+                    <option>Honduras</option>
+                    <option>Hungary</option>
+                    <option>Iceland</option>
+                    <option>India</option>
+                    <option>Indonesia</option>
+                    <option>Iran</option>
+                    <option>Iraq</option>
+                    <option>Ireland</option>
+                    <option>Israel</option>
+                    <option>Italy</option>
+                    <option>Jamaica</option>
+                    <option>Japan</option>
+                    <option>Jordan</option>
+                    <option>Kazakhstan</option>
+                    <option>Kenya</option>
+                    <option>Kiribati</option>
+                    <option>Kuwait</option>
+                    <option>Kyrgyzstan</option>
+                    <option>Laos</option>
+                    <option>Latvia</option>
+                    <option>Lebanon</option>
+                    <option>Lesotho</option>
+                    <option>Liberia</option>
+                    <option>Libya</option>
+                    <option>Liechtenstein</option>
+                    <option>Lithuania</option>
+                    <option>Luxembourg</option>
+                    <option>Madagascar</option>
+                    <option>Malawi</option>
+                    <option>Malaysia</option>
+                    <option>Maldives</option>
+                    <option>Mali</option>
+                    <option>Malta</option>
+                    <option>Marshall Islands</option>
+                    <option>Mauritania</option>
+                    <option>Mauritius</option>
+                    <option>Mexico</option>
+                    <option>Micronesia</option>
+                    <option>Moldova</option>
+                    <option>Monaco</option>
+                    <option>Mongolia</option>
+                    <option>Montenegro</option>
+                    <option>Morocco</option>
+                    <option>Mozambique</option>
+                    <option>Myanmar</option>
+                    <option>Namibia</option>
+                    <option>Nauru</option>
+                    <option>Nepal</option>
+                    <option>Netherlands</option>
+                    <option>New Zealand</option>
+                    <option>Nicaragua</option>
+                    <option>Niger</option>
+                    <option>Nigeria</option>
+                    <option>North Korea</option>
+                    <option>North Macedonia</option>
+                    <option>Norway</option>
+                    <option>Oman</option>
+                    <option>Pakistan</option>
+                    <option>Palau</option>
+                    <option>Palestine State</option>
+                    <option>Panama</option>
+                    <option>Papua New Guinea</option>
+                    <option>Paraguay</option>
+                    <option>Peru</option>
+                    <option>Philippines</option>
+                    <option>Poland</option>
+                    <option>Portugal</option>
+                    <option>Qatar</option>
+                    <option>Romania</option>
+                    <option>Russia</option>
+                    <option>Rwanda</option>
+                    <option>Saint Kitts and Nevis</option>
+                    <option>Saint Lucia</option>
+                    <option>Saint Vincent and the Grenadines</option>
+                    <option>Samoa</option>
+                    <option>San Marino</option>
+                    <option>Sao Tome and Principe</option>
+                    <option>Saudi Arabia</option>
+                    <option>Senegal</option>
+                    <option>Serbia</option>
+                    <option>Seychelles</option>
+                    <option>Sierra Leone</option>
+                    <option>Singapore</option>
+                    <option>Slovakia</option>
+                    <option>Slovenia</option>
+                    <option>Solomon Islands</option>
+                    <option>Somalia</option>
+                    <option>South Africa</option>
+                    <option>South Korea</option>
+                    <option>South Sudan</option>
+                    <option>Spain</option>
+                    <option>Sri Lanka</option>
+                    <option>Sudan</option>
+                    <option>Suriname</option>
+                    <option>Sweden</option>
+                    <option>Switzerland</option>
+                    <option>Syria</option>
+                    <option>Tajikistan</option>
+                    <option>Tanzania</option>
+                    <option>Thailand</option>
+                    <option>Timor-Leste</option>
+                    <option>Togo</option>
+                    <option>Tonga</option>
+                    <option>Trinidad and Tobago</option>
+                    <option>Tunisia</option>
+                    <option>Turkey</option>
+                    <option>Turkmenistan</option>
+                    <option>Tuvalu</option>
+                    <option>Uganda</option>
+                    <option>Ukraine</option>
+                    <option>United Arab Emirates</option>
+                    <option>United Kingdom</option>
+                    <option>United States of America</option>
+                    <option>Uruguay</option>
+                    <option>Uzbekistan</option>
+                    <option>Vanuatu</option>
+                    <option>Venezuela</option>
+                    <option>Vietnam</option>
+                    <option>Yemen</option>
+                    <option>Zambia</option>
+                    <option>Zimbabwe</option>
+                </optgroup>
+            </select>
+        -->
+            <b>Economic Sector</b>
+            <select id="selector" class="selectpicker">
+                <option value="nothing"></option>
+                <option value="all">All</option>
+                <option value="electricity&heat">Electricity & Heat Production</option>
+                <option value="agriculture&forestry">Agriculture&Forestry</option>
+                <option value="buildings">Buildings</option>
+                <option value="transportation">Transportation</option>
+                <option value="industry">Industry</option>
+                <option value="other">Other</option>
+            </select>
+            <button id="buttonn" class="btn float-right btn-outline-success my-2 my-sm-0" onclick="myScript" type="submit">Search</button>
+        </div>
+
+        <div id="container"></div>
+        <script>
+        document.getElementById("buttonn").addEventListener("click", myFunction);
+        function myFunction(){
+            if (document.getElementById("selector").value == "nothing") { 
+                document.getElementById("container").innerText = "Please choose a economic sector to see the greenhousegas emissions"
+            }
+            else if (document.getElementById("selector").value == "all"){
+                document.getElementById("container").innerHTML = "";
+                var data = [
+                {x: "CO2", value: 437166},
+                {x: "CH4", value: 621630},
+                {x: "NO2", value: 348662},
+                {x: "F-GASES", value: 78662}
+                ];
+                var chart = anychart.pie(data);
+                chart.innerRadius("30%");
+                chart.title("Greenhousegases of economic sector: All");
+                chart.container("container");
+                chart.draw();
+            }
+            else if (document.getElementById("selector").value == "electricity&heat"){
+                document.getElementById("container").innerHTML = "";
+                var data = [
+                {x: "CO2", value: 537166},
+                {x: "CH4", value: 821630},
+                {x: "NO2", value: 148662},
+                {x: "F-GASES", value: 78662}
+                ];
+                var chart = anychart.pie(data);
+                chart.innerRadius("30%");
+                chart.title("Greenhousegases of economic sector: electricity & heat");
+                chart.container("container");
+                chart.draw();
+            }
+            else if (document.getElementById("selector").value == "agriculture&forestry"){
+                document.getElementById("container").innerHTML = "";
+                var data = [
+                {x: "CO2", value: 437166},
+                {x: "CH4", value: 921630},
+                {x: "NO2", value: 248662},
+                {x: "F-GASES", value: 78662}
+                ];
+                var chart = anychart.pie(data);
+                chart.innerRadius("30%");
+                chart.title("Greenhousegases of economic sector: agriculture & forestry");
+                chart.container("container");
+                chart.draw();
+            }
+            else if (document.getElementById("selector").value == "buildings"){
+                document.getElementById("container").innerHTML = "";
+                var data = [
+                {x: "CO2", value: 637166},
+                {x: "CH4", value: 721630},
+                {x: "NO2", value: 148662},
+                {x: "F-GASES", value: 78662}
+                ];
+                var chart = anychart.pie(data);
+                chart.innerRadius("30%");
+                chart.title("Greenhousegases of economic sector: buildings");
+                chart.container("container");
+                chart.draw();
+            }
+            else if (document.getElementById("selector").value == "transportation"){
+                document.getElementById("container").innerHTML = "";
+                var data = [
+                {x: "CO2", value: 937166},
+                {x: "CH4", value: 721630},
+                {x: "NO2", value: 1248662},
+                {x: "F-GASES", value: 178662}
+                ];
+                var chart = anychart.pie(data);
+                chart.innerRadius("30%");
+                chart.title("Greenhousegases of economic sector: transportation");
+                chart.container("container");
+                chart.draw();
+            }
+            else if (document.getElementById("selector").value == "industry"){
+                document.getElementById("container").innerHTML = "";
+                var data = [
+                {x: "CO2", value: 737166},
+                {x: "CH4", value: 521630},
+                {x: "NO2", value: 48662},
+                {x: "F-GASES", value: 78662}
+                ];
+                var chart = anychart.pie(data);
+                chart.innerRadius("30%");
+                chart.title("Greenhousegases of economic sector: industry");
+                chart.container("container");
+                chart.draw();
+            }
+            else {
+                document.getElementById("container").innerHTML = "";
+                var data = [
+                {x: "CO2", value: 637166},
+                {x: "CH4", value: 721630},
+                {x: "NO2", value: 348662},
+                {x: "F-GASES", value: 78662}
+                ];
+                var chart = anychart.pie(data);
+                chart.innerRadius("30%");
+                chart.title("Doughnut Chart: Basic Sample");
+                chart.container("container");
+                chart.draw();
+            }
+        }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+    </body>
+</html>
